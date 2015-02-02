@@ -1,5 +1,6 @@
 Movie:
   name: string
+  image: string
   summary: text
   year_released: string
   rating: string

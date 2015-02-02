@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "studio"
     t.string "runtime"
     t.string "format"
+    t.string "image"
   end
 
   create_table "reviews", force: true do |t|

@@ -32,7 +32,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Buyflix</a>
+
+          <!-- Rails equivalent to -->
+          <!-- <a href="/" class="navbar-brand">Buyflix</a> -->
+          <%= link_to "Buyflix", root_path, class: "navbar-brand" %>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
