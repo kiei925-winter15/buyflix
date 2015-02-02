@@ -13,4 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development do
   gem 'spring'
   gem 'ez'
+  gem 'quiet_assets'
+  gem 'tzinfo-data', platforms: [:mingw, :mswin]
 end
+
+source 'https://rubygems.org'

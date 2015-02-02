@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "name"
     t.text   "summary"
     t.string "year_released"
+    t.string "rating"
+    t.string "genre"
+    t.string "studio"
+    t.string "runtime"
+    t.string "format"
   end
 
   create_table "reviews", force: true do |t|
@@ -36,6 +41,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "roles", force: true do |t|
     t.integer "movie_id"
     t.integer "actor_id"
+    t.string  "character_name"
   end
 
   add_index "roles", ["actor_id"], name: "index_roles_on_actor_id"
