@@ -18,15 +18,16 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "movies", force: true do |t|
-    t.string "name"
-    t.text   "summary"
-    t.string "year_released"
-    t.string "rating"
-    t.string "genre"
-    t.string "studio"
-    t.string "runtime"
-    t.string "format"
-    t.string "image"
+    t.string  "name"
+    t.text    "summary"
+    t.string  "year_released"
+    t.string  "rating"
+    t.string  "genre"
+    t.string  "studio"
+    t.string  "runtime"
+    t.string  "format"
+    t.string  "image"
+    t.integer "price"
   end
 
   create_table "reviews", force: true do |t|

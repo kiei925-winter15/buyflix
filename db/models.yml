@@ -8,6 +8,7 @@ Movie:
   studio: string
   runtime: string
   format: string
+  price: integer
 
 Actor:
   name: string
