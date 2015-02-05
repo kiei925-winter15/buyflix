@@ -23,12 +23,14 @@ ActiveRecord::Schema.define(version: 0) do
     t.string  "year_released"
     t.string  "rating"
     t.string  "genre"
-    t.string  "studio"
     t.string  "runtime"
     t.string  "format"
     t.string  "image"
     t.integer "price"
+    t.integer "studio_id"
   end
+
+  add_index "movies", ["studio_id"], name: "index_movies_on_studio_id"
 
   create_table "reviews", force: true do |t|
     t.integer "movie_id"
@@ -48,6 +50,10 @@ ActiveRecord::Schema.define(version: 0) do
 
   add_index "roles", ["actor_id"], name: "index_roles_on_actor_id"
   add_index "roles", ["movie_id"], name: "index_roles_on_movie_id"
+
+  create_table "studios", force: true do |t|
+    t.string "name"
+  end
 
   create_table "users", force: true do |t|
     t.string "email"
