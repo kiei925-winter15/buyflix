@@ -7,6 +7,6 @@
 
 <ul>
   <% @actors.each do |actor| %>
-    <li><%= actor.name %></li>
+    <li><%= actor.name %> <%= link_to "Edit", edit_actor_path(actor) %> <%= link_to "Delete", actor_path(actor), method: :delete, data: { confirm: 'Are you really really really sure?' } %></li>
   <% end %>
 </ul>

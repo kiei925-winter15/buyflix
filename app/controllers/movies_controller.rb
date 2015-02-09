@@ -1,11 +1,12 @@
 class MoviesController < ApplicationController
 
   def index
-    # Do something
+    @movies = Movie.all
   end
 
   def show
-    # Do something
+    @movie = Movie.find_by(id: params["id"])
+    @roles = Role.where(movie_id: @movie.id)  
   end
 
   def new
