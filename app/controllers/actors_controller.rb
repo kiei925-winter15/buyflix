@@ -5,7 +5,7 @@ class ActorsController < ApplicationController
   end
 
   def show
-    # whatever
+    # do something
   end
 
   def new
