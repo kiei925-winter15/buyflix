@@ -5,7 +5,8 @@ class ActorsController < ApplicationController
   end
 
   def show
-    # do something
+    @actor = Actor.find_by(id: params["id"])
+    @roles = @actor.roles
   end
 
   def new

@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find_by(id: params["id"])
-    @roles = Role.where(movie_id: @movie.id)  
+    @roles = @movie.roles
   end
 
   def new
@@ -15,8 +15,12 @@ class MoviesController < ApplicationController
 
   def create
     movie_params = params.require(:movie).permit!
-    Movie.create(movie_params)
-    redirect_to movies_path
+    @movie = Movie.new(movie_params)
+    if @movie.save
+      redirect_to movies_path
+    else
+      render text: "FAIL"
+    end
   end
 
   def edit

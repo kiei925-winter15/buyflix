@@ -1,8 +1,9 @@
-<h1>Harrison Ford</h1>
+<h1><%= @actor.name %></h1>
 
 <h3>Appears In</h3>
 
 <ul>
-  <li>Raiders of the Lost Ark as Indiana Jones</li>
-  <li>Star Wars as Han Solo</li>
+  <% @roles.each do |role| %>
+    <li><%= link_to role.movie.name, movie_path(role.movie) %> as <%= role.character_name %></li>
+  <% end %>
 </ul>

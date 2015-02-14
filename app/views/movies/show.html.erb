@@ -6,7 +6,13 @@
 <div class="row">
   <div class="col-md-3 text-center">
     <p><%= image_tag @movie.image %></p>
-    <p><a href="#" class="btn btn-sm btn-success"><i class="fa fa-shopping-cart"></i> <%= number_to_currency(@movie.price.to_d / 100) %> Buy in HD</a></p>
+    <p>
+      <a href="#" class="btn btn-sm btn-success">
+        <i class="fa fa-shopping-cart"></i> 
+        <%= number_to_currency(@movie.price.to_d / 100) if @movie.price %> 
+        Buy in HD
+      </a>
+    </p>
     <p><strong>Genre:</strong> <%= @movie.genre %></p>
     <p><strong>Released:</strong> <%= @movie.year_released %></p>
   </div>
@@ -20,7 +26,7 @@
     <h2>Cast</h2>
     <ul class="list-unstyled">
       <% @roles.each do |role| %>
-        <li><%= Actor.find_by(id: role.actor_id).name %> as <%= role.character_name %></li>
+        <li><%= link_to role.actor.name, actor_path(role.actor) %> as <%= role.character_name %></li>
       <% end %>
     </ul>
   </div>
@@ -32,7 +38,7 @@
     <table class="table table-striped table-bordered">
       <tr>
         <td><strong>Studio</strong></td>
-        <td><%= @movie.studio.name %></td>
+        <td><%= @movie.studio.try(:name) %></td>
       </tr>
       <tr>
         <td><strong>Run Time</strong></td>
