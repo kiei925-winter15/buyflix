@@ -56,4 +56,7 @@ Role.create(movie_id: guardians.id, actor_id: dave.id, character_name: "Drax")
 Role.create(movie_id: guardians.id, actor_id: vin.id, character_name: "Groot")
 Role.create(movie_id: guardians.id, actor_id: bradley.id, character_name: "Rocket")
 
+# Create users
+User.create(name: "Brian", email: "b-eng@kellogg.northwestern.edu", password: "secret")
+
 puts "There are now #{Studio.count} studios, #{Movie.count} movies, #{Actor.count} actors, and #{Role.count} roles in the database."
