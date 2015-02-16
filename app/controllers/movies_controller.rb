@@ -31,7 +31,11 @@ class MoviesController < ApplicationController
     movie_params = params.require(:movie).permit!
     @movie = Movie.find_by(id: params["id"])
     @movie.update(movie_params)
-    redirect_to movies_path
+    if @movie.valid?
+      redirect_to movies_path
+    else
+      render text: "FAIL"
+    end
   end
 
   def destroy

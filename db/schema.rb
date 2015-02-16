@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "movies", force: true do |t|
     t.string  "name"
-    t.string  "image"
     t.text    "summary"
     t.string  "year_released"
     t.string  "rating"
     t.string  "genre"
     t.string  "runtime"
     t.string  "format"
+    t.string  "image"
     t.integer "price"
     t.integer "studio_id"
   end
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "users", force: true do |t|
     t.string "email"
-    t.string "password"
     t.string "name"
+    t.string "password"
   end
 
 end

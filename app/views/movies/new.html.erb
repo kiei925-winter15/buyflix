@@ -1,23 +1,18 @@
-<!-- 
-Finish the new page...
-
-Movie:
-  name: string
-  image: string
-  summary: text
-  year_released: string
-  rating: string
-  genre: string
-  runtime: string
-  format: string
-  price: integer
-  studio_id: integer
--->
+<% if @movie.errors.any? %>
+  <div class="alert alert-warning">
+    <h2>Some errors kept this movie from being saved:</h2>
+    <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_for @movie do |form| %>
   <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control", placeholder: "Gimme a name" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= form.label :studio_id %>
