@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
   def create
     # Do authentication
+    # Redirect to the root_path
     # Display a notice that login was either successful or unsuccessful
   end
 
