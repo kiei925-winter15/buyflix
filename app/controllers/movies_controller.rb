@@ -15,8 +15,8 @@ class MoviesController < ApplicationController
 
   def create
     movie_params = params.require(:movie).permit!
-    @movie = Movie.new(movie_params)
-    if @movie.save
+    @movie = Movie.create(movie_params)
+    if @movie.valid?
       redirect_to movies_path
     else
       render text: "FAIL"
