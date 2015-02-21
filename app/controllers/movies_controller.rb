@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  skip_before_action :require_user, only: [:index, :show]
 
   def index
     @movies = Movie.all
@@ -17,9 +18,9 @@ class MoviesController < ApplicationController
     movie_params = params.require(:movie).permit!
     @movie = Movie.create(movie_params)
     if @movie.valid?
-      redirect_to movies_path
+      redirect_to movies_path, notice: "Cool dude!"
     else
-      render text: "FAIL"
+      render "new"
     end
   end
 

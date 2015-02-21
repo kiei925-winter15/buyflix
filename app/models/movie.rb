@@ -4,5 +4,5 @@ class Movie < ActiveRecord::Base
   has_many :actors, through: :roles
 
   validates :name, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, numericality: true
 end

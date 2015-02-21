@@ -23,7 +23,7 @@ Studio:
 
 User:
   email: string
-  password: string
+  password_digest: string
   name: string
 
 Review:
