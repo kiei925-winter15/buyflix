@@ -8,12 +8,12 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt'
+gem 'ez'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
   gem 'sqlite3'
   gem 'spring'
-  gem 'ez'
   gem 'quiet_assets'
   gem 'tzinfo-data', platforms: [:mingw, :mswin]
 end
