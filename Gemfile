@@ -18,4 +18,9 @@ group :development do
   gem 'tzinfo-data', platforms: [:mingw, :mswin]
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 source 'https://rubygems.org'
