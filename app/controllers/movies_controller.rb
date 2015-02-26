@@ -15,13 +15,10 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movie_params = params.require(:movie).permit!
-    @movie = Movie.create(movie_params)
-    if @movie.valid?
-      redirect_to movies_path, notice: "Cool dude!"
-    else
-      render "new"
-    end
+    omdb = Omdb::Api.new.fetch(params[:movie][:name])
+    movie_data = omdb[:movie]
+    # Create movie from API instead of user input
+    # Nevermind about price and studio
   end
 
   def edit

@@ -36,4 +36,10 @@ h2 {
 }
 .thumbnail {
   height: 510px;
+  a > img {
+    height: 317px;
+  }
+}
+img.poster {
+  width: 240px;
 }
