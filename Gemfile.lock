@@ -57,10 +57,6 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.1)
     multi_json (1.10.1)
-    netrc (0.10.3)
-    omdb (1.0.4)
-      json
-      rest-client
     pg (0.18.1)
     pg (0.18.1-x86-mingw32)
     quiet_assets (1.0.3)
@@ -91,9 +87,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    rest-client (1.7.3)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -138,7 +131,6 @@ DEPENDENCIES
   ez
   jbuilder (~> 2.0)
   jquery-rails
-  omdb
   pg
   quiet_assets
   rails (= 4.1.8)

@@ -1,4 +1,5 @@
 class ActorsController < ApplicationController
+  skip_before_action :require_user, only: :show
 
   def index
     @actors = Actor.all

@@ -4,6 +4,6 @@
 
 <ul>
   <% @roles.each do |role| %>
-    <li><%= link_to role.movie.name, movie_path(role.movie) %> as <%= role.character_name %></li>
+    <li><%= link_to role.movie.name, movie_path(role.movie) %></li>
   <% end %>
 </ul>

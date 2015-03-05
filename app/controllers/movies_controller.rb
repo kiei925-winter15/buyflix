@@ -10,17 +10,6 @@ class MoviesController < ApplicationController
     @roles = @movie.roles
   end
 
-  def new
-    @movie = Movie.new
-  end
-
-  def create
-    omdb = Omdb::Api.new.fetch(params[:movie][:name])
-    movie_data = omdb[:movie]
-    # Create movie from API instead of user input
-    # Nevermind about price and studio
-  end
-
   def edit
     @movie = Movie.find_by(id: params["id"])
   end
