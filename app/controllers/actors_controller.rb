@@ -16,7 +16,11 @@ class ActorsController < ApplicationController
 
   def create
     actor_params = params.require(:actor).permit(:name)
-    Actor.create(actor_params)
+    @actor = Actor.create(actor_params)
+    
+    # read the uploaded file
+    # write the uploaded file to a new file somewhere
+    
     redirect_to actors_path
   end
 

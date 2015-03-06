@@ -3,5 +3,9 @@
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
-  <%= form.button 'Create Actor', class: "btn btn-success" %>
+  <div class="form-group">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, class: "form-control" %>
+  </div>
+  <%= form.button 'Save Actor', class: "btn btn-success" %>
 <% end %>
