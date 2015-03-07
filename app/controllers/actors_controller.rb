@@ -19,7 +19,14 @@ class ActorsController < ApplicationController
     @actor = Actor.create(actor_params)
     
     # read the uploaded file
+    file = params["actor"]["photo"]
+    file_data = file.read
+
     # write the uploaded file to a new file somewhere
+    the_file = Rails.root.join("public", "images", "#{@actor.id}.jpg")
+    File.open(the_file, "wb") do |f|
+      f.write(file_data)
+    end
     
     redirect_to actors_path
   end

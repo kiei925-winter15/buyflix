@@ -9,6 +9,8 @@ Movie:
   format: string
   price: integer
   studio_id: integer
+  created_at: datetime
+  updated_at: datetime
 
 Actor:
   name: string

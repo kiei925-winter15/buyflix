@@ -18,16 +18,18 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "movies", force: true do |t|
-    t.string  "name"
-    t.text    "summary"
-    t.string  "year_released"
-    t.string  "rating"
-    t.string  "genre"
-    t.string  "runtime"
-    t.string  "format"
-    t.string  "image"
-    t.integer "price"
-    t.integer "studio_id"
+    t.string   "name"
+    t.string   "image"
+    t.text     "summary"
+    t.string   "year_released"
+    t.string   "rating"
+    t.string   "genre"
+    t.string   "runtime"
+    t.string   "format"
+    t.integer  "price"
+    t.integer  "studio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "movies", ["studio_id"], name: "index_movies_on_studio_id"

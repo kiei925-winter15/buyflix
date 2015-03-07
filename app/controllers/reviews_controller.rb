@@ -1,12 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :find_movie
 
   def new
-    @movie = Movie.find_by(id: params["movie_id"])
     @review = Review.new
   end
 
   def create
-    @movie = Movie.find_by(id: params["movie_id"])
     review_params = params.require(:review).permit(:body, :rating)
     @review = @movie.reviews.new(review_params)
     @review.user = current_user
@@ -15,6 +14,10 @@ class ReviewsController < ApplicationController
     else
       render "new"
     end
+  end
+
+  def find_movie
+    @movie = Movie.find_by(id: params["movie_id"])
   end
 
 end
