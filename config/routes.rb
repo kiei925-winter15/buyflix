@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :charges
+  resources :genres
+
   resources :movies do
     resources :reviews
   end

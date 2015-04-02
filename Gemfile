@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'bcrypt'
 gem 'ez'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'stripe'
 
 group :development do
   gem 'sqlite3'
